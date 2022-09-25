@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- <div class="container">
+        <form id="basic-form" action="" method="post">
+            <div class="form-group">
+                <label for="user">Username</label>
+                <input type="text" name="username" id="username" class="form-control">
+                <h5 class="usercheck" style="color: red;">**username not valid</h5>
+            </div>
+            <input type="submit" id="submitbtn" value="Submit" class="btn btn-primary">
+        </form>
+    </div> -->
+
+
+    <div class="container">
+    <form class="cmxform" id="commentForm" method="get" action="">
+        <fieldset>
+          <legend>Please provide your name, email address (won't be published) and a comment</legend>
+          <div class="form-group">
+            <label for="cname">Name (required, at least 2 characters)</label>
+            <input class="form-control" id="cname" name="name">
+          </div>
+          <div class="form-group">
+            <label for="cemail">E-Mail (required)</label>
+            <input class="form-control" id="cemail" name="email">
+          </div>
+          <div class="form-group">
+            <label for="curl">URL (optional)</label>
+            <input class="form-control" id="curl"+ name="url">
+          </div>
+          <div class="form-group">
+            <label for="ccomment">Your comment (required)</label>
+            <textarea class="form-control" id="ccomment" name="comment"></textarea>
+          </div><br>
+          <div class="form-group">
+            <input class="form-control" class="submit" type="submit" value="Submit">
+          </div>
+        </fieldset>
+      </form>
+    </div>  
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $("basic-form")
+            $("#commentForm").validate({
+
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 10
+                    
+                    },
+                email: {
+                    required: true,
+                    email: true
+                },
+                url: {
+                    required: true,
+                    url: true
+                },
+                comment: {
+                    required: true
+                }
+
+            },
+            messages:  {
+                name:  {
+                    required: "please input",
+                    minlength: "Username has to be more than 3 lettars",
+                    maxlength: "Username has a max of 10 lettars"
+                }
+
+
+            }
+
+
+        })
+    })
+
+            
+        
+
+
+
+
+
+
+
+
+
+
+        // $(document).ready(function(){
+        // $("usercheck").hide();
+        // let usernameError = true;
+        // $("usernames").keyup(function(){
+        //     validationusername();
+        // })
+
+        // function validationusername(){
+        //     let usernameValue = $("usernames").val();
+        //     if(usernameValue . length == "") {
+        //         $("usercheck").show();
+        //         usernameError = false;
+        //         return false;
+        //     } else if (usernameValue. length < 3 || usernameValue. length > 10 )
+                
+            
+        // }
+
+        // })
+
+
+        
+    </script>
+</body>
+
+</html>

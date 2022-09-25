@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <p class="phide">Hi i will be gone Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem aperiam beatae
+        dignissimos perspiciatis, adipisci laboriosam necessitatibus similique nulla pariatur explicabo dolores delectus
+        ipsum eos consequatur magnam, a odio natus corrupti.</p>
+
+    <button id="hide">info</button>
+    <button id="show">show</button>
+    <button id="both">both</button>
+    <button id="addclass">Add</button>
+    <button id="removeclass">Remove</button>
+
+
+
+    <div class="car-show">
+        <div id="tab">
+            <nav>
+                <a href="#" class="active" data-id='1'><span class="color red">Red</span></a>
+                <a href="#" data-id='2'><span class="color blue">Blue</span></a>
+                <a href="#" data-id='3'><span class="color black">black</span></a>
+            </nav>
+        
+            <div class="tab-content active" data-content='1'>
+                Isi Tab 1
+            </div>
+            <div class="tab-content" data-content='2'>
+                Isi Tab 2
+            </div>
+            <div class="tab-content" data-content='3'>
+                Isi Tab 3
+            </div>
+        </div>
+    </div>
+
+    <input type="text"/>
+    <p class="test">Test</p>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $(".phide").slideUp();
+            });
+
+            $("#show").click(function () {
+                $(".phide").slideDown();
+            });
+
+            $("#both").click(function () {
+                $(".phide").slideToggle("0");
+            });
+
+            $("#addclass").click(function () {
+                $(".phide").addClass();
+            });
+
+            $("#removeclass").click(function () {
+                $(".phide").removeClass();
+            });
+
+        });
+
+        $("#tab nav a").click(function(){
+  const id = $(this).data('id');
+  if(!$(this).hasClass('active')){
+    $("#tab nav a").removeClass('active');
+    $(this).addClass('active');
+    
+    $('.tab-content').hide();
+    $(`[data-content=${id}]`).fadeIn();
+  }
+});
+
+    </script>
+</body>
+
+</html>
